@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Nordland kunst- og filmfagskole - KortFri</string>
+    <string name="app_name">Natur videregående skole - KortFri</string>
     <string name="headerTwo">We digitize your school certificates</string>
     <string name="Madewith">Made with</string>
     <string name="forKVT">for</string>
@@ -36,8 +36,8 @@
     <string name="obs">This is not good</string>
     <string name="signInDigiFail">Login failed</string>
     <string name="studentbevis">STUDENT CARD</string>
-    <string name="companynamelong">Nordland kunst- og filmfagskole</string>
-    <string name="companyname">NKFS</string>
+    <string name="companynamelong">Natur videregående skole</string>
+    <string name="companyname">Natur</string>
     <string name="GyldigTil">Valid for </string>
     <string name="expired">EXPIRED</string>
     <string name="studentnumber">Studentnr:</string>
@@ -73,7 +73,8 @@
     <string name="verification">verification successful</string>
     <string name="landskode">Country Code:</string>
 
-
+    <string name="login">Login</string>
+    <string name="infomasjon">Contact Information</string>
 
 
     <string name="kortfriNorge">www.kortfri.no</string>

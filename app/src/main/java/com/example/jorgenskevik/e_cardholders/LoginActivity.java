@@ -58,8 +58,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class LoginActivity extends AppCompatActivity  implements
-        View.OnClickListener {
+public class LoginActivity extends AppCompatActivity  implements View.OnClickListener {
 
     private static final String TAG = "PhoneAuthActivity";
 
@@ -105,9 +104,6 @@ public class LoginActivity extends AppCompatActivity  implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.firebaseauth);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
 
         if (savedInstanceState != null) {
             onRestoreInstanceState(savedInstanceState);
@@ -116,23 +112,6 @@ public class LoginActivity extends AppCompatActivity  implements
         JodaTimeAndroid.init(this);
         sessionManager = new SessionManager(getApplicationContext());
         HashMap<String, String> user = sessionManager.getUserDetails();
-
-        // name
-        String name = user.get(SessionManager.KEY_NAME);
-
-        // id
-        String id = user.get(SessionManager.KEY_ID);
-
-        // email
-        String email = user.get(SessionManager.KEY_EMAIL);
-
-        //token
-        String token = user.get(SessionManager.KEY_TOKEN);
-
-        //check
-        String check = user.get(SessionManager.KEY_CHECK);
-
-        if(name == null || id == null || email == null || token == null ){
 
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -237,16 +216,6 @@ public class LoginActivity extends AppCompatActivity  implements
             }
         };
 
-    } else if(check == null) {
-        Intent intent = new Intent(LoginActivity.this, TermsActivity.class);
-        startActivity(intent);
-
-    }
-        else{
-        Intent intent = new Intent(LoginActivity.this, UserActivity.class);
-        startActivity(intent);
-    }
-        // [END phone_auth_callbacks]
     }
 
     // [START on_start_check_user]
@@ -380,7 +349,6 @@ public class LoginActivity extends AppCompatActivity  implements
                 mDetailText.setText(null);
                 break;
             case STATE_CODE_SENT:
-                System.out.println("2");
 
                 // Code sent state, show the verification field, the
                 enableViews(mVerifyButton, mResendButton, mPhoneNumberField, mVerificationField);
@@ -390,7 +358,6 @@ public class LoginActivity extends AppCompatActivity  implements
                 break;
             case STATE_VERIFY_FAILED:
                 System.out.println(landskode);
-                System.out.println("3");
 
                 // Verification has failed, show all options
                 enableViews(mStartButton, mVerifyButton, mResendButton, mPhoneNumberField,
@@ -411,14 +378,11 @@ public class LoginActivity extends AppCompatActivity  implements
 
                 // Set the verification text based on the credential
                 if (cred != null) {
-                    System.out.println("5");
 
                     if (cred.getSmsCode() != null) {
-                        System.out.println("6");
 
                         mVerificationField.setText(cred.getSmsCode());
                     } else {
-                        System.out.println("7");
 
                         mVerificationField.setText(R.string.instant_validation);
                         mVerificationField.setTextColor(Color.parseColor("#4bacb8"));
@@ -427,7 +391,6 @@ public class LoginActivity extends AppCompatActivity  implements
 
                 break;
             case STATE_SIGNIN_FAILED:
-                System.out.println("8");
 
                 // No-op, handled by sign-in check
                 mDetailText.setText(R.string.status_sign_in_failed);
@@ -435,7 +398,6 @@ public class LoginActivity extends AppCompatActivity  implements
                 progressBar.setVisibility(View.INVISIBLE);
                 break;
             case STATE_SIGNIN_SUCCESS:
-                System.out.println("9");
 
                 // Np-op, handled by sign-in check
                 mStatusText.setText(R.string.signed_in);
@@ -449,7 +411,6 @@ public class LoginActivity extends AppCompatActivity  implements
 
             mStatusText.setText(R.string.sign_out);;
         } else {
-            System.out.println("AUTORISERT!");
 
             // Signed in
             mPhoneNumberViews.setVisibility(View.GONE);
