@@ -629,11 +629,9 @@ public class UserActivity extends AppCompatActivity implements ActionSheet.Actio
                                 userDetails = sessionManager.getUserDetails();
                                 String kortfri = userDetails.get(SessionManager.KEY_TURN);
                                 if(kortfri.equals("kortfri")){
-                                    System.out.println("her?");
                                     Picasso.with(getApplicationContext()).load(user.getPicture()).into(picassoImageTarget(getApplicationContext(), user.getStudentNumber(), "my_image.jpeg"));
                                     Picasso.with(getApplicationContext()).load(picture).resize(300,300).centerCrop().into(view2);
                                 }else{
-                                    System.out.println("eller her?");
                                     float rotateImage = Float.parseFloat(userDetails.get(SessionManager.KEY_TURN));
                                     Picasso.with(getApplicationContext()).load(user.getPicture()).rotate(rotateImage).into(picassoImageTarget(getApplicationContext(), user.getStudentNumber(), "my_image.jpeg"));
                                     Picasso.with(getApplicationContext()).load(picture).rotate(rotateImage).resize(300,300).centerCrop().into(view2);

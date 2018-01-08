@@ -230,7 +230,6 @@ public class PictureActivity extends Activity {
                         sessionManager.updatePath(mediaPath);
                         sessionManager.updatePictureToken("BRUKT");
                         sessionManager.updateTurn(getCameraPhotoOrientation(mediaPath));
-                        System.out.println(getCameraPhotoOrientation(mediaPath) + "-------------------------");
 
                         ContextWrapper cw = new ContextWrapper(getApplicationContext());
                         File directory = cw.getDir(studentNumber, Context.MODE_PRIVATE);
@@ -308,7 +307,6 @@ public class PictureActivity extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(rotate + " ...............................");
         return rotate;
     }
 
